@@ -19,8 +19,11 @@ export class Owner extends Component {
         this.PurchaseExt= this.PurchaseExt.bind(this);
 }
 componentDidMount(){
-    const[, , , , , ctc ,  ctcArgs]= this.context;
+    const[, , , , , ctc ,]= this.context;
     this.interval = setInterval(async () => await this.UpdateBalance(), 50000)
+
+    //Reache bağlan
+    Backend.Owner(ctc[0], this);
 }
 
 async UpdateBalance(){

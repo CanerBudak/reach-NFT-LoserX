@@ -7,19 +7,22 @@ import { useState } from "react";
 
 const CreatorViews = ({appState, args, GetParamsReady, GetParams}) => {
     switch(appState) {
-        case "GetParams":
+        case "getParams":
             return(
                 GetParamsReady
                     ? <GetParams functionToCall = {GetParams}/>
                     : <h1>Loading the GetParams page</h1>
             );
+        default:
+            break;
     }
-}
-    const GetParams = ({functionToCall}) => {
+}   
+    
+    export const GetParams = ({functionToCall}) => {
 
         const[lifetime, setlifetime] = useState(500);
         const[price, setPrice] = useState(1);
-        const[id, setId]= useState(1);
+        const[id, setId]= useState();
         const handleClick = () => {
             functionToCall({
                 lifetime: lifetime, 
@@ -28,7 +31,7 @@ const CreatorViews = ({appState, args, GetParamsReady, GetParams}) => {
         }
     
 
-        return(
+        return (
             <Container>
                 <Form.Group>
                     <p>Lifetime</p>
