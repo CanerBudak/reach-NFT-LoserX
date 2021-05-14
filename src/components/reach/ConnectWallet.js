@@ -13,7 +13,8 @@ const ConnectWallet = () => {
 
     const connectWallet = async () => {
         const acc = await Reach.getDefaultAccount();
-
+        const amount = Reach.parseCurrency(10);
+        await Reach.fundFromFaucet(acc, amount);
         const balAtomic = await Reach.balanceOf(acc);
         const bal = Reach.formatCurrency(balAtomic, 4);
 
