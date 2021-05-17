@@ -21,7 +21,7 @@ const AppNavbar = () => {
                         className="d-inline-block align-top"
                         alt="Reach Logo" />
                     {' '}
-                    <p className="d-inline-block ml-3">NFT NoName</p>
+                    <p className="d-inline-block ml-3">NFT LoserX</p>
                 </Navbar.Brand>
                 <Nav className="ml-auto">
                     <LinkContainer to="/">
