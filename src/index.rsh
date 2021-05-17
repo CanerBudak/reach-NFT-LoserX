@@ -6,7 +6,7 @@
  */
 
 export const main = Reach.App(
-  {}, 
+  {},
   [
     Participant('Creator', {
       getParams: Fun([], Object({
@@ -17,7 +17,8 @@ export const main = Reach.App(
     }),
     ParticipantClass('Owner', {
       purchase: Fun([UInt], Bool),
-      revealId: Fun([UInt], Null)
+      revealId: Fun([UInt], Null),
+      seeOwner: Fun([Address], Null),
     })
   ],
   (Creator, Owner) => {
@@ -60,6 +61,8 @@ export const main = Reach.App(
           Owner.only(() => {
             if (addr == this) {
               interact.revealId(id);
+            } else {
+              interact.seeOwner(addr);
             }
           });
           Owner.publish();
@@ -76,3 +79,4 @@ export const main = Reach.App(
     commit();
   }
 );
+
