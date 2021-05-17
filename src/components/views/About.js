@@ -11,7 +11,7 @@ const About = () => {
                 <Col xs={8} className="mt-4">
                     <h1 className="display-4">About the Project</h1>
                     <hr style={{ width: "10rem" }} />
-                    <p className="text-left mt-3">NFTNoName is an NFT idea project, which was created by us for the Reach Bounty Hack Turkey event, which was held recently.</p>
+                    <p className="text-left mt-3">NFT LoserX is an NFT idea project, which was created by us for the Reach Bounty Hack Turkey event, which was held recently.</p>
                     <p className="text-left mt-3">As can be understood from the name of the project, what is aimed is that NFT loses its value over time.</p>
                     <p className="text-left mt-3">Here, it is tried to use suitable functions in smart contract. In addition, a clear interface was tried to be presented to the user.</p>
 
