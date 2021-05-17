@@ -1,5 +1,5 @@
 'reach 0.1';
-
+'use strict';
 /**
  * @dev Sürekli satın alım zorunlu fiyat kendini güncellemiyor,
  * Hep azalıyor

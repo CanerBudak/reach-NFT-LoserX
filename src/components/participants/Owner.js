@@ -18,51 +18,51 @@ export class Owner extends Component {
         //bind functions 
         this.PurchaseExt= this.PurchaseExt.bind(this);
 }
-componentDidMount(){
-    const[, , , , , ctc ,]= this.context;
-    this.interval = setInterval(async () => await this.UpdateBalance(), 50000)
+    componentDidMount(){
+        const[, , , , , ctc ,]= this.context;
+        this.interval = setInterval(async () => await this.UpdateBalance(), 50000)
 
-    //Reache bağlan
-    Backend.Owner(ctc[0], this);
+        //Reache bağlan
+        Backend.Owner(ctc[0], this);
 }
 
-async UpdateBalance(){
-    const [account, , , setBalance] = this.context;
+    async UpdateBalance(){
+        const [account, , , setBalance] = this.context;
 
-    const balance = Reach.formatCurrency(await Reach.balanceOf(account), 4);
-    setBalance(balance); 
+        const balance = Reach.formatCurrency(await Reach.balanceOf(account), 4);
+        setBalance(balance); 
 
 
 }
-async  purchase(price){
-    const response = await new Promise( res=> {
-        this.setState({
-            appState: "Purchase",
-            args: [res],
-            resPurchase: res
+    async  purchase(price){
+        const response = await new Promise( res=> {
+            this.setState({
+                appState: "Purchase",
+                args: [res],
+                resPurchase: res
+            });
         });
-    });
-    return response;
+        return response;
 }
-PurchaseExt(response){
-    this.state.resPurchase(response);
+    PurchaseExt(response){
+        this.state.resPurchase(response);
 }
 
-async revealId(id){
-    this.setState({
-        appState:"revealId",
-        args: [id],
-    })
+    async revealId(id){
+        this.setState({
+            appState:"revealId",
+            args: [id],
+        })
 } 
 
  
-render() {
-    return <OwnerViews
-        appState={this.state.appState}
-        args = {this.state.args}
-        revealPurchase={this.state.resPurchaseId !== null}
-        revealPurchaseExt={this.revealPurchaseExt} />
-    }
+    render() {
+        return <OwnerViews
+            appState={this.state.appState}
+            args = {this.state.args}
+            revealPurchase={this.state.resPurchaseId !== null}
+            revealPurchaseExt={this.revealPurchaseExt} />
+        }
 }
 
 

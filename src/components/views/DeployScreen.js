@@ -17,7 +17,7 @@ const DeployScreen = () => {
         boxShadow: "-10px 10px #f2f3f4 "
     }
 
-    const handleProceed = () => { history.push("/app/creator") }
+    const handleProceed = () => { history.push("/app/Creator") }
     const handleCopy = () => { setCopied(true) }
 
     return (

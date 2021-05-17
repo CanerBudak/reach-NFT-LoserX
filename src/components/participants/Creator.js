@@ -14,10 +14,10 @@ export class Creator extends Component {
                 resGetParams: null, 
             };
             //bind functions 
-            this.GetParamsExt = this.GetParamsExt.bind(this);
+            this.getParamsExt = this.getParamsExt.bind(this);
 }
     componentDidMount(){
-        const[, , , , , ctc , ]= this.context;
+        const [, , , , , , ctc, ,] = this.context;
         this.interval = setInterval(async () => await this.UpdateBalance(), 50000)
 
 
@@ -38,7 +38,7 @@ export class Creator extends Component {
 
     }
     // get params
-    async GetParams() {
+    async getParams() {
         const params = await new Promise(res => {
             this.setState({
                 appState: "getParams",
@@ -49,7 +49,7 @@ export class Creator extends Component {
         return params;
     }
 
-    GetParamsExt(params){
+    getParamsExt(params){
         this.state.resGetParams(params);
     }
     render() {
@@ -57,8 +57,8 @@ export class Creator extends Component {
             appState={this.state.appState}
             args = {this.state.args}
             //resolves
-            GetParamsReady={this.state.resGetParams !== null}
-            GetParams={this.GetParamsExt}/>
+            getParamsReady={this.state.resGetParams !== null}
+            getParams={this.getParamsExt}/>
     }
 
 }

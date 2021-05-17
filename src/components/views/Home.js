@@ -1,11 +1,14 @@
-import React, { useContext} from "react";
+import React, { useContext, useState } from "react";
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+
+
 import ConnectWallet from "../reach/ConnectWallet";
 import { Context } from "../../Context";
-import {DeployButton,  AttachButton} from "../reach/DeployAttach";
+import { AttachButton, DeployButton } from "../reach/DeployAttach";
 
 const Home = () => {
 
@@ -23,16 +26,9 @@ const Home = () => {
                             <Card.Text>
                                 Deploy your own application
                             </Card.Text>
-                            {/*<Form.Group>
-                                <Form.Label>Wager amount</Form.Label>
-                                <Form.Control
-                                    value={wager}
-                                    onChange={(e) => setWager(e.target.value)}
-                                    type="number"
-                                    placeholder="Enter wager" />
-                            </Form.Group>*/}
-                            <DeployButton 
-                            />
+                            <DeployButton ctcArgs={[
+                                
+                            ]} />
                         </Card>
                     </Col>
                     <Col>
